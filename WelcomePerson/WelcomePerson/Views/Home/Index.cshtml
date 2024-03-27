@@ -1,0 +1,26 @@
+﻿@model WelcomePerson.Models.Person;
+
+<form asp-controller="Home" asp-action="CreatePerson" method="post">
+    <div class="form-control">
+        <div class="form-group">
+            <label>Name</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        
+        <div class="form-group">
+            <label>Message</label>
+            <input asp-for="Message" class="form-control" />
+        </div>
+        <button type="submit">Submit</button>
+    </div>
+
+    
+</form>
+
+<hr />
+
+@if (!string.IsNullOrEmpty(Model.Name))
+{
+    <p>Welcome, @(Model.Name)!</p>
+    <p>Your message: @(Model.Message)</p>
+}
